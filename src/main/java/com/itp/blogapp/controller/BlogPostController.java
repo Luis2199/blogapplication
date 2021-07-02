@@ -1,13 +1,8 @@
 package com.itp.blogapp.controller;
 
-// import java.io.FileInputStream;
-// import java.io.IOException;
-// import java.io.InputStream;
+import java.util.List;
 
-// import javax.json.Json;
-// import javax.json.JsonObject;
-// import javax.json.JsonReader;
-
+import com.itp.blogapp.aid.ReadPosts;
 import com.itp.blogapp.model.BlogPost;
 
 import org.springframework.stereotype.Controller;
@@ -17,11 +12,11 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class BlogPostController {
 
-	@GetMapping("/blogpost")
-	public BlogPost getblogpost(Model model) {
-        BlogPost blogpost = new BlogPost();
-        model.addAttribute("post", blogpost);
-        return blogpost;
+	@GetMapping("/blogpost/{id}")
+	public String getblogpost(@PathVariable int id, Model model) {
+        List<BlogPost> posts = ReadPosts.readJson();
+        model.addAttribute("post", posts.get(id));
+        return "bpost";
     }   
     
     @GetMapping("/newPost")

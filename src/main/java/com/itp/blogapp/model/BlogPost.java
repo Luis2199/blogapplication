@@ -2,7 +2,7 @@ package com.itp.blogapp.model;
 
 public class BlogPost {
 
-	private long id;
+	private int id;
 	private String title;
 	private String introduction;
 	private String paragraph1;
@@ -16,7 +16,7 @@ public class BlogPost {
 
     }
 
-	public BlogPost(long id, String title, String introduction, String paragraph1, String paragraph2, String paragraph3, String conclusion, String username, String date) {
+	public BlogPost(int id, String title, String introduction, String paragraph1, String paragraph2, String paragraph3, String conclusion, String username, String date) {
 		this.id = id;
 		this.title = title;
 		this.introduction = introduction;
@@ -28,11 +28,11 @@ public class BlogPost {
 		this.date = date;
 	}
 
-	public long getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
