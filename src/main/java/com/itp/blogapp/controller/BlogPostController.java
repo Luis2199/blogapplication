@@ -29,31 +29,4 @@ public class BlogPostController {
         model.addAttribute("blogPost", new BlogPost());
         return "postForm";
     }
-
-    // public BlogPost readBlogPost() throws IOException {
-    //     InputStream fis = new FileInputStream("../database/posts.json");
-
-    //     // create JsonReader object
-    //     JsonReader jsonReader = Json.createReader(fis);
-
-    //     // get JsonObject from JsonReader
-    //     JsonObject jsonObject = jsonReader.readObject();
-
-    //     // we can close IO resource and JsonReader now
-    //     jsonReader.close();
-    //     fis.close();
-
-    //     // Retrieve data from JsonObject and create Post bean
-    //     BlogPost post = new BlogPost();
-    //     post.setId(jsonObject.getInt("id"));
-    //     post.setTitle(jsonObject.getString("title"));
-    //     post.setIntroduction(jsonObject.getString("introduction"));
-    //     post.setParagraph1(jsonObject.getString("paragraph1"));
-    //     post.setParagraph2(jsonObject.getString("paragraph2"));
-    //     post.setParagraph3(jsonObject.getString("paragraph3"));
-    //     post.setConclusion(jsonObject.getString("conclusion"));
-    //     post.setUsername(jsonObject.getString("introduction"));
-    //     post.setDate(jsonObject.getString("date"));
-    //     return post;
-    // }
 }
