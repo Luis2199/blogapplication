@@ -1,6 +1,6 @@
 package com.itp.blogapp.controller;
 
-import java.time.Instant;
+import java.time.LocalDate;
 import java.util.List;
 
 import com.itp.blogapp.aid.ReadPosts;
@@ -28,21 +28,20 @@ public class BlogPostController {
     
     @GetMapping("/newPost")
     public String newPost(Model model){
-        // List<BlogPost> posts = ReadPosts.readJson();
-        // int sizeNum = posts.size() + 1;
-
-        // BlogPost post = new BlogPost();
-        // post.setId(sizeNum);
-        // post.setUsername("Anonymus");
-        // Instant date = Instant.now();
-        // post.setDate(""+date);
-
         model.addAttribute("blogPost", new BlogPost());
         return "postForm";
     }
 
     @PostMapping("/postAdded")
     public String newPost(@ModelAttribute BlogPost post){
+        List<BlogPost> posts = ReadPosts.readJson();
+        int sizeNum = posts.size() + 1;
+
+        post.setId(sizeNum);
+        post.setUsername("Anonymus");
+        LocalDate date = LocalDate.now();
+        post.setDate(""+date);
+
         WritePost.writeJson(post);
         return "redirect:/blogpost/" + post.getId();
     }
