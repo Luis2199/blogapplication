@@ -29,7 +29,7 @@ public class BlogPostController {
     @GetMapping("/newPost")
     public String newPost(Model model){
         model.addAttribute("blogPost", new BlogPost());
-        return "postForm";
+        return "myNewPost";
     }
 
     @PostMapping("/postAdded")
@@ -43,7 +43,7 @@ public class BlogPostController {
         post.setDate(""+date);
 
         WritePost.writeJson(post);
-        return "redirect:/blogpost/" + post.getId();
+        return "redirect:/";
     }
 
 
