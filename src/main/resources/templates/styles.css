@@ -1,4 +1,7 @@
 /* stylelint-disable selector-list-comma-newline-after */
+body {
+  background-color: rgb(247, 247, 247);
+} 
 
 .blog-header {
     line-height: 1;
@@ -101,3 +104,16 @@
   .blog-footer p:last-child {
     margin-bottom: 0;
   }
+  
+  #email {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: 0px;
+  }
+  #password {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top: 0px;
+  }
+
+  
