@@ -13,7 +13,7 @@ public class BlogPost {
 	private String date;
 
 	public BlogPost() {
-
+		
     }
 
 	public BlogPost(int id, String title, String introduction, String paragraph1, String paragraph2, String paragraph3, String conclusion, String username, String date) {
