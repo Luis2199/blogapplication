@@ -3,16 +3,10 @@ package com.itp.blogapp.model;
 public class User {
 
     private long id;
-    private String username;
+    private String fName;
+    private String lName;
     private String email;
     private String password;
-
-    public User(long id, String username, String email, String password){
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
 
     public long getId() {
         return this.id;
@@ -22,12 +16,20 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return this.username;
+    public String getFName() {
+        return this.fName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setFName(String fName) {
+        this.fName = fName;
+    }
+
+    public String getLName() {
+        return this.lName;
+    }
+
+    public void setLName(String lName) {
+        this.lName = lName;
     }
 
     public String getEmail() {
@@ -43,6 +45,18 @@ public class User {
     }
 
     public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public User(){
+
+    }
+
+    public User(long id, String fName, String lName, String email, String password){
+        this.id = id;
+        this.fName = fName;
+        this.lName = lName;
+        this.email = email;
         this.password = password;
     }
 
